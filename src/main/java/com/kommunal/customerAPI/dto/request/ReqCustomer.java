@@ -9,7 +9,4 @@ public class ReqCustomer {
     private Long customerId;
     private String birthdate;
 
-//    @JsonProperty(value = "token")
-//    private  ReqToken reqToken;
-
   }

@@ -24,7 +24,6 @@ public class CustomerServiceImpl implements  CustomerService{
         Response<RespCustomer> response = new Response<>();
         try {
             Long customerId = reqCustomer.getCustomerId();
-//            utility.checkToken(reqCustomer.getReqToken());
             if (customerId == null) {
                 throw new MyException(ExceptionConstants.INVALID_REQUEST_DATA, "Invalid request data");
             }
