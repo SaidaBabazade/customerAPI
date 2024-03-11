@@ -10,7 +10,7 @@ import org.hibernate.annotations.DynamicInsert;
 @Table(name ="CUST_DATA")
 @Data
 @DynamicInsert
-public class Customer {
+public class CustData {
     @Id
     private Long id;
     private String birthdate;

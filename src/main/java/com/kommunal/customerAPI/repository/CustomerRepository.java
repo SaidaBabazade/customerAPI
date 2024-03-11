@@ -1,16 +1,13 @@
 package com.kommunal.customerAPI.repository;
 
-import com.kommunal.customerAPI.entity.Customer;
+import com.kommunal.customerAPI.entity.CustData;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
 
 @Repository
-public interface CustomerRepository extends JpaRepository<Customer, Long> {
-
-    List<Customer> findAllByActive(Integer active);
-
+public interface CustomerRepository extends JpaRepository<CustData, Long> {
+    CustData findCustomerById (Long id);
 
 
 }

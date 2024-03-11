@@ -1,11 +1,11 @@
 package com.kommunal.customerAPI.controller;
 
+import com.kommunal.customerAPI.dto.request.ReqCustomer;
 import com.kommunal.customerAPI.dto.response.RespCustomer;
 import com.kommunal.customerAPI.dto.response.Response;
 import com.kommunal.customerAPI.service.CustomerService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,9 +16,12 @@ public class CustomerController {
 
     private  final CustomerService customerService;
 
-
-    @RequestMapping(value ="/getCustomerList")
-    public Response<List<RespCustomer>>  getCustomerList(){
-    return customerService.getCustomerList();
+    @GetMapping("/GetCustomerById")
+    public Response<RespCustomer> getCustomerById(@RequestBody ReqCustomer reqCustomer) {
+        return customerService.getCustomerById(reqCustomer);
     }
+
+
+
+
 }
