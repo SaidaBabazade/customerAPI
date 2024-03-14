@@ -2,6 +2,7 @@ package com.kommunal.customerAPI.dto.response;
 
 import lombok.Builder;
 import lombok.Data;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -9,7 +10,7 @@ import java.time.LocalDate;
 @Data
 @Builder
 public class RespContract {
-    private Long id;
+    private  Long id;
     private String contNum;
     private Long buyer;
     private Long accId;
