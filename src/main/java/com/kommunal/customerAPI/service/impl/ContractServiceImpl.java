@@ -1,4 +1,4 @@
-package com.kommunal.customerAPI.service;
+package com.kommunal.customerAPI.service.impl;
 
 import com.kommunal.customerAPI.dto.request.ReqContract;
 import com.kommunal.customerAPI.dto.response.RespContract;
@@ -8,15 +8,14 @@ import com.kommunal.customerAPI.entity.CcContract;
 import com.kommunal.customerAPI.exception.ExceptionConstants;
 import com.kommunal.customerAPI.exception.MyException;
 import com.kommunal.customerAPI.repository.ContractRepository;
+import com.kommunal.customerAPI.service.ContractService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
 
 @Service
 @RequiredArgsConstructor
-public class ContractServiceImpl implements  ContractService {
+public class ContractServiceImpl implements ContractService {
 
     private  final ContractRepository contractRepository;
 
