@@ -1,9 +1,11 @@
 package com.kommunal.customerAPI.service.impl;
 
 import com.kommunal.customerAPI.dto.request.ReqFlat;
+import com.kommunal.customerAPI.dto.response.RespContract;
 import com.kommunal.customerAPI.dto.response.RespFlat;
 import com.kommunal.customerAPI.dto.response.RespStatus;
 import com.kommunal.customerAPI.dto.response.Response;
+import com.kommunal.customerAPI.entity.CcContract;
 import com.kommunal.customerAPI.entity.CcFlat;
 import com.kommunal.customerAPI.exception.ExceptionConstants;
 import com.kommunal.customerAPI.exception.MyException;
@@ -19,12 +21,19 @@ public class FlatServiceImpl implements FlatService {
     private final FlatRepository flatRepository;
     @Override
     public Response<RespFlat> getFlatById(ReqFlat reqFlat) {
-        Response<ReqFlat> response = new Response<>();
+        Response<RespFlat> response = new Response<>();
         try {
             Long id = reqFlat.getId();
             if (id == null) {
                 throw new MyException(ExceptionConstants.INTERNAL_EXCEPTION, "Invalid request data");
             }
+           CcFlat ccFlat  = flatRepository.findCcFlatById(id);
+            if (ccFlat== null){
+                throw new MyException(ExceptionConstants.CC_FLAT_NOT_FOUND,"CcFlat not found");
+            }
+            RespFlat respFlat =mapping(ccFlat);
+            response.setT(respFlat);
+            response.setStatus(RespStatus.getSuccessMessage());
 
         }catch (MyException ex) {
             response.setStatus(new RespStatus(ex.getCode(), ex.getMessage()));
@@ -33,7 +42,7 @@ public class FlatServiceImpl implements FlatService {
             response.setStatus(new RespStatus(ExceptionConstants.INTERNAL_EXCEPTION, "Internal Exception"));
             ex.printStackTrace();
         }
-        return null;
+        return response;
     }
     private  RespFlat mapping(CcFlat ccFlat){
         RespFlat respFlat = RespFlat.builder().
