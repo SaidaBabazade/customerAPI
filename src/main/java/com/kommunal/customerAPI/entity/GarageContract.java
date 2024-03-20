@@ -25,6 +25,4 @@ public class GarageContract {
     private  String carNo;
     private String cmpN;
 
-
-
 }

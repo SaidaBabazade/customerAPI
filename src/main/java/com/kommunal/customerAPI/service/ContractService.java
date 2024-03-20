@@ -5,5 +5,5 @@ import com.kommunal.customerAPI.dto.response.RespContract;
 import com.kommunal.customerAPI.dto.response.Response;
 
 public interface ContractService {
-    Response<RespContract> getContractById(ReqContract reqContract);
+    Response<RespContract> getContractById(Long id);
 }

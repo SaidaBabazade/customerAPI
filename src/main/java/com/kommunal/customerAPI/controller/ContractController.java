@@ -15,8 +15,8 @@ public class ContractController {
     private  final ContractService contractService;
 
     @GetMapping("/GetContractById")
-    public Response<RespContract> getContractById(@RequestBody ReqContract reqContract){
-        return contractService.getContractById(reqContract);
+    public Response<RespContract> getContractById(@PathVariable Long id){
+        return contractService.getContractById(id );
     }
 
 }

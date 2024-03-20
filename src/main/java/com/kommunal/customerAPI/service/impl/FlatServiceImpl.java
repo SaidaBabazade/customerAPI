@@ -20,10 +20,9 @@ public class FlatServiceImpl implements FlatService {
 
     private final FlatRepository flatRepository;
     @Override
-    public Response<RespFlat> getFlatById(ReqFlat reqFlat) {
+    public Response<RespFlat> getFlatById(Long  id) {
         Response<RespFlat> response = new Response<>();
         try {
-            Long id = reqFlat.getId();
             if (id == null) {
                 throw new MyException(ExceptionConstants.INTERNAL_EXCEPTION, "Invalid request data");
             }

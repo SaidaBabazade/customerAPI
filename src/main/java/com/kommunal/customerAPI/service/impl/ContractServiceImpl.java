@@ -20,10 +20,9 @@ public class ContractServiceImpl implements ContractService {
     private  final ContractRepository contractRepository;
 
     @Override
-    public Response<RespContract> getContractById(ReqContract reqContract) {
+    public Response<RespContract> getContractById(Long  id) {
         Response<RespContract> response = new Response<>();
         try {
-            Long id =reqContract.getId();
             if(id == null){
                 throw  new MyException(ExceptionConstants.INVALID_REQUEST_DATA,"Invalid request data");
             }

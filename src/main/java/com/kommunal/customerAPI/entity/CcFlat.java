@@ -1,13 +1,17 @@
 package com.kommunal.customerAPI.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicInsert;
 
 @Entity
 @Table(name = "CC_FLAT")
 @Data
 @DynamicInsert
+@AllArgsConstructor
+@NoArgsConstructor
 public class CcFlat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

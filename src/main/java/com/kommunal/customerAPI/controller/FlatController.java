@@ -5,10 +5,7 @@ import com.kommunal.customerAPI.dto.response.RespFlat;
 import com.kommunal.customerAPI.dto.response.Response;
 import com.kommunal.customerAPI.service.FlatService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("CC_FLATS")
@@ -18,9 +15,9 @@ public class FlatController {
     private  final FlatService flatService;
 
     @GetMapping("/GetFlatById")
-    public Response<RespFlat> getFlatById(@RequestBody ReqFlat reqFlat){
+    public Response<RespFlat> getFlatById(@PathVariable Long id){
 
-        return  flatService.getFlatById(reqFlat);
+        return  flatService.getFlatById(id);
     }
 
 }

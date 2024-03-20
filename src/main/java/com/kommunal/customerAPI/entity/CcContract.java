@@ -1,7 +1,9 @@
 package com.kommunal.customerAPI.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicInsert;
 
 import java.math.BigDecimal;
@@ -11,6 +13,8 @@ import java.time.LocalDate;
 @Table(name ="CC_CONTRACT")
 @Data
 @DynamicInsert
+@AllArgsConstructor
+@NoArgsConstructor
 
 public class CcContract {
      @Id
