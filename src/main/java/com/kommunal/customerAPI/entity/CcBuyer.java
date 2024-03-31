@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicInsert;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 @Table(name = "CC_BUYERS")
@@ -25,10 +26,10 @@ public class CcBuyer {
     private String passSer;
     private String passNum;
     private String passPin;
-    private LocalDate passDate;
+    private Date passDate;
     private String passDept;
     private Boolean gender;
-    private LocalDate birthDate;
+    private Date birthDate;
     private Short birthState;
     private Short birthCity;
     private Boolean famStatus;
@@ -40,7 +41,7 @@ public class CcBuyer {
     private String phone;
     private String phoneMob;
     private String email;
-    private LocalDate regDate;
+    private Date regDate;
     private Long userId;
     private String addInfo;
     private Long idolD;

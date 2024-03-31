@@ -19,7 +19,7 @@ public class CcFlat {
     private Long bldId;
     private String flatNumber;
     private String entrance;
-    private String fFloor;
+    private String compName;
     private Long rooms;
     private Long area;
     private Long price1;

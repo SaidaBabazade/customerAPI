@@ -1,19 +1,12 @@
-package com.kommunal.customerAPI.entity;
+package com.kommunal.customerAPI.dto.response;
 
-import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
-import org.hibernate.annotations.DynamicInsert;
 
 import java.time.LocalDate;
-
-@Entity
-@Table(name = "KOMUNAL")
 @Data
-@DynamicInsert
-public class Komunal {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Builder
+public class RespKomunal {
     private Long id;
     private Long custId;
     private Long billNo;
