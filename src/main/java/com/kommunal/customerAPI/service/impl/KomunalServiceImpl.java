@@ -1,6 +1,8 @@
 package com.kommunal.customerAPI.service.impl;
 
+import com.kommunal.customerAPI.dto.request.ReqCustomer;
 import com.kommunal.customerAPI.dto.request.ReqKomunal;
+import com.kommunal.customerAPI.dto.response.RespCustomer;
 import com.kommunal.customerAPI.dto.response.RespGarageContract;
 import com.kommunal.customerAPI.dto.response.RespKomunal;
 import com.kommunal.customerAPI.dto.response.RespStatus;
@@ -23,6 +25,8 @@ public class KomunalServiceImpl  implements KomunalService {
     private  final KomunalRepository komunalRepository;
 
 
-
-
+    @Override
+    public RespKomunal getKomunalById(RespKomunal respKomunal) {
+        return null;
+    }
 }
